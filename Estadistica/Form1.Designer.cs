@@ -47,10 +47,10 @@
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.ContentWrapper = new System.Windows.Forms.Panel();
+            this.ContentPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.Curva = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.AnimacionSidebar = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.ASidebarBack = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.ContentPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.DashboardMover = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.CurvaContenido = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.TopMenu.SuspendLayout();
@@ -360,6 +360,7 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // ContentWrapper
             // 
@@ -372,6 +373,16 @@
             this.ContentWrapper.Name = "ContentWrapper";
             this.ContentWrapper.Size = new System.Drawing.Size(1100, 720);
             this.ContentWrapper.TabIndex = 2;
+            // 
+            // ContentPanel
+            // 
+            this.ContentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.AnimacionSidebar.SetDecoration(this.ContentPanel, BunifuAnimatorNS.DecorationType.None);
+            this.ASidebarBack.SetDecoration(this.ContentPanel, BunifuAnimatorNS.DecorationType.None);
+            this.ContentPanel.Location = new System.Drawing.Point(19, 20);
+            this.ContentPanel.Name = "ContentPanel";
+            this.ContentPanel.Size = new System.Drawing.Size(1069, 684);
+            this.ContentPanel.TabIndex = 0;
             // 
             // Curva
             // 
@@ -411,7 +422,7 @@
             animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
             animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
             animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.Padding = new System.Windows.Forms.Padding(0);
             animation2.RotateCoeff = 0F;
             animation2.RotateLimit = 0F;
             animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
@@ -419,16 +430,6 @@
             animation2.TimeCoeff = 0F;
             animation2.TransparencyCoeff = 0F;
             this.ASidebarBack.DefaultAnimation = animation2;
-            // 
-            // ContentPanel
-            // 
-            this.ContentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
-            this.AnimacionSidebar.SetDecoration(this.ContentPanel, BunifuAnimatorNS.DecorationType.None);
-            this.ASidebarBack.SetDecoration(this.ContentPanel, BunifuAnimatorNS.DecorationType.None);
-            this.ContentPanel.Location = new System.Drawing.Point(19, 20);
-            this.ContentPanel.Name = "ContentPanel";
-            this.ContentPanel.Size = new System.Drawing.Size(1069, 684);
-            this.ContentPanel.TabIndex = 0;
             // 
             // DashboardMover
             // 
