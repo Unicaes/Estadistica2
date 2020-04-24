@@ -8,24 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Estadistica.Functions;
+using Estadistica.Views;
+
 namespace Estadistica
 {
     public partial class Form1 : Form
     {
         List<double> lista;
+        ingresoDatos datos;
+        GraphsView graficas;
+        InfoTable tablas;
         public Form1()
         {
             InitializeComponent();
-            lista = new List<double>();
-            lista.Add(15);
-            lista.Add(1);
-            lista.Add(2);
-            lista.Add(3);
-            lista.Add(4);
-            lista.Add(5);
-            lista.Add(1);
-            lista.Add(9);
-            lista.Add(1);
         }
         #region Diseno
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -58,12 +53,27 @@ namespace Estadistica
             }
         }
         #endregion
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void btnGraficos_Click(object sender, EventArgs e)
         {
-            var k = DatosConjunto.CalcularClases(lista.Count);
-            var r = DatosConjunto.CalcularRango(lista.Max(), lista.Min());
-            DatosConjunto.CalcularAncho(r,k);
-            DatosConjunto.CalcularDatos(lista);
+            graficas = new GraphsView();
+            this.ContentPanel.Controls.Clear();
+            this.ContentPanel.Controls.Add(graficas);
+            graficas.Show();
+        }
+        private void btnDatos_Click(object sender, EventArgs e)
+        {
+            datos = new ingresoDatos();
+            this.ContentPanel.Controls.Clear();
+            this.ContentPanel.Controls.Add(datos);
+            datos.Show();
+        }
+
+        private void btnTabla_Click(object sender, EventArgs e)
+        {
+            tablas = new InfoTable();
+            this.ContentPanel.Controls.Clear();
+            this.ContentPanel.Controls.Add(tablas);
+            tablas.Show();
         }
     }
 }

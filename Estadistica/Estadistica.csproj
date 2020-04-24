@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\Configuracion.cs" />
     <Compile Include="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +69,18 @@
     <Compile Include="Views\GraphsView.Designer.cs">
       <DependentUpon>GraphsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\InfoTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InfoTable.Designer.cs">
+      <DependentUpon>InfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ingresoDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ingresoDatos.Designer.cs">
+      <DependentUpon>ingresoDatos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +96,12 @@
     </Compile>
     <EmbeddedResource Include="Views\GraphsView.resx">
       <DependentUpon>GraphsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InfoTable.resx">
+      <DependentUpon>InfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ingresoDatos.resx">
+      <DependentUpon>ingresoDatos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +125,29 @@
   <ItemGroup>
     <None Include="Resources\Menu_48px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\analytics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LineChart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\datos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graficos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tabla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\variable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

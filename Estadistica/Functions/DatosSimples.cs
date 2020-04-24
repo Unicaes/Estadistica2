@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.Framework.Lib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Estadistica.Functions
     {
         private static double mediana, moda, media,varianza,desviacion;
         private static List<double> datosCuad = new List<double>();
+        public static Dictionary<double, int> conteo = new Dictionary<double, int>();
         public static void CalcularMediana(List<Double> datos)
         {
             datos.Sort();
@@ -30,7 +32,7 @@ namespace Estadistica.Functions
         }
         public static void CalcularModa(List<double> datos)
         {
-            Dictionary<double, int> conteo = new Dictionary<double, int>();
+            
             for (int i = 0; i < datos.Count; i++)
             {
                 if (conteo.ContainsKey(datos[i]))
@@ -61,8 +63,17 @@ namespace Estadistica.Functions
             }
             media = suma / datos.Count;
         }
-        public static void CalcularVarianza(List<double> datos,double resta = 0)
+        public static void CalcularVarianza(List<double> datos)
         {
+            int resta;
+            if (Configuracion.muestra)
+            {
+                resta = 1;
+            }
+            else
+            {
+                resta = 0;
+            }
             foreach (var item in datos)
             {
                 var x = Math.Pow((item - media),2);
