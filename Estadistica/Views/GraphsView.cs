@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Estadistica.Functions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,9 +17,14 @@ namespace Estadistica.Views
         {
             InitializeComponent();
             TopLevel = false;
-            this.chart1.Series["ChartFrecuencia"].Points.AddXY("Lunes", 1);
-            this.chart1.Series["ChartFrecuencia"].Points.AddXY("Martes", 2);
-            this.chart1.Series["ChartFrecuencia"].Points.AddXY("Miercoles", 0);
+            if (Configuracion.agrupados)
+            {
+                CargarDatosAgrupados();
+            }
+            else
+            {
+                CargarDatosSimples();
+            }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -29,6 +35,20 @@ namespace Estadistica.Views
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             chart1.Series["ChartFrecuencia"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+        }
+        void CargarDatosSimples()
+        {
+            foreach (KeyValuePair<double,int> item in DatosSimples.conteo)
+            {
+                this.chart1.Series["ChartFrecuencia"].Points.AddXY(item.Key.ToString(), item.Value);
+            }
+        }
+        void CargarDatosAgrupados()
+        {
+            for (int i = 0; i < DatosConjunto.k; i++)
+            {
+                this.chart1.Series["ChartFrecuencia"].Points.AddXY(DatosConjunto.Li[i]+"-"+DatosConjunto.Ls[i], DatosConjunto.f[i]);
+            }
         }
     }
 }

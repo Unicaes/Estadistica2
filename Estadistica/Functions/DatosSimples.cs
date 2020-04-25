@@ -10,7 +10,7 @@ namespace Estadistica.Functions
     public static class DatosSimples
     {
         private static double mediana, moda, media,varianza,desviacion;
-        private static List<double> datosCuad = new List<double>();
+        public static List<double> datosCuad = new List<double>();
         public static Dictionary<double, int> conteo = new Dictionary<double, int>();
         public static void CalcularMediana(List<Double> datos)
         {

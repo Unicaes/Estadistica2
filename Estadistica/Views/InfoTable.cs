@@ -28,12 +28,13 @@ namespace Estadistica.Views
                 this.dataGridView1.Columns.Add("(Marca - Media)^2", "(Marca - Media)^2");
                 this.dataGridView1.Columns.Add("(Marca * Frecuencia)^2 * f", "(Marca * Frecuencia)^2 * f");
                 CargarDatosAgrupados();
-                MessageBox.Show(DatosConjunto.media.ToString());
             }
             else
             {
                 this.dataGridView1.Columns.Add("Datos", "Datos");
                 this.dataGridView1.Columns.Add("Frecuencia", "Frecuencia");
+                this.dataGridView1.Columns.Add("(f-media)^2","(f-media)^2");
+                CargarDatosSimples();
             }
         }
         void CargarDatosAgrupados()
@@ -49,6 +50,21 @@ namespace Estadistica.Views
                 this.dataGridView1.Rows[i].Cells[5].Value = DatosConjunto.Fr[i];
                 this.dataGridView1.Rows[i].Cells[6].Value = DatosConjunto.xmediaCuad[i];
                 this.dataGridView1.Rows[i].Cells[7].Value = DatosConjunto.xmediaCuadF[i];
+            }
+        }
+        void CargarDatosSimples()
+        {
+            int n = 0;
+            foreach (KeyValuePair<double,int> item in DatosSimples.conteo)
+            {
+                this.dataGridView1.Rows.Add();
+                this.dataGridView1.Rows[n].Cells[0].Value = item.Key;
+                this.dataGridView1.Rows[n].Cells[1].Value = item.Value;
+                n++;
+            }
+            for (int i = 0; i < DatosSimples.datosCuad.Count; i++)
+            {
+                this.dataGridView1.Rows[0].Cells[2].Value = DatosSimples.datosCuad[i];
             }
         }
     }

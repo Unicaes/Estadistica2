@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,6 @@ namespace Estadistica.Views
             TopLevel = false;
             //this.dataGridView1.BackgroundColor = Color.FromArgb(39, 41, 61);
             this.dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
-            this.dataGridView1.Rows.Add();
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Estadistica.Views
             }
             else
             {
-                this.dataGridView1.Rows.RemoveAt(num);
+                this.dataGridView1.Rows.RemoveAt(num-1);
             }
         }
 
