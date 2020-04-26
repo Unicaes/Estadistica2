@@ -13,3 +13,4 @@ C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Debug\Estadistica.pdb
 C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Debug\Estadistica.Views.GraphsView.resources
 C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Debug\Estadistica.Views.ingresoDatos.resources
 C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Debug\Estadistica.Views.InfoTable.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Debug\Estadistica.Views.InfoVariable.resources

@@ -9,21 +9,33 @@ namespace Estadistica.Functions
 {
     public class DatosConjunto
     {
-        public static double k, rango, ancho, varianza, desviacion;
-        public static List<double> Li = new List<double>();
-        public static List<double> Ls = new List<double>();
-        public static List<double> f = new List<double>();
-        public static List<double> Fa = new List<double>();
-        public static List<double> Fr = new List<double>();
+        private static DatosConjunto current;
+        public static DatosConjunto Instance
+        {
+            get
+            {
+                if (current == null)
+                {
+                    current = new DatosConjunto();
+                }
+                return current;
+            }
+        }
+        public double k, rango, ancho, varianza, desviacion,q1,q3;
+        public List<double> Li = new List<double>();
+        public List<double> Ls = new List<double>();
+        public List<double> f = new List<double>();
+        public List<double> Fa = new List<double>();
+        public List<double> Fr = new List<double>();
         //x = marca de clase
-        public static List<double> x = new List<double>();
-        public static List<double> xf = new List<double>();
-        public static List<double> xmediaCuad = new List<double>();
-        public static List<double> xmediaCuadF = new List<double>();
-        public static double media, mediana, moda;
-        private static int mayor, medio;
-        private static bool bandera = true;
-        public static void CalcularClases(int n)
+        public List<double> x = new List<double>();
+        public List<double> xf = new List<double>();
+        public List<double> xmediaCuad = new List<double>();
+        public List<double> xmediaCuadF = new List<double>();
+        public double media, mediana, moda;
+        private int mayor, medio;
+        private bool bandera = true;
+        public void CalcularClases(int n)
         {
             k = 1 + (3.322 * Math.Log10(n));
             var x = Math.Truncate(k);
@@ -33,15 +45,46 @@ namespace Estadistica.Functions
             }
             k = x;
         }
-        public static void CalcularRango(double vMax, double vMin)
+        public void CalcularRango(double vMax, double vMin)
         {
             rango = vMax - vMin;
         }
-        public static void CalcularAncho()
+        public void CalcularAncho()
         {
             ancho = rango / k;
+            ancho = Math.Ceiling(ancho);
         }
-        public static void CalcularDatos(List<double> datos, double resta = 0)
+        public void CalcularCuartiles(List<double> datos)
+        {
+            datos.Sort();
+            double pos = 0.25 * (datos.Count+1);
+            double pos2 = 0.75 * (datos.Count+1);
+            if (pos % 1 != 0)
+            {
+                var entero = (int)Math.Floor(pos);
+                var decimala = 1-(Math.Ceiling(pos)-pos);
+                var valor=datos[entero - 1];
+                var decimas = decimala * (datos[entero] - datos[entero - 1]);
+                q1 = valor + decimas;
+            }
+            else
+            {
+                q1 = datos[(int)(pos - 1)];
+            }
+            if (pos2%1!=0)
+            {
+                var entero = (int)Math.Floor(pos2);
+                var decimala = 1 - (Math.Ceiling(pos2) - pos2);
+                var valor = datos[entero - 1];
+                var decimas = decimala * (datos[entero] - datos[entero - 1]);
+                q3 = valor + decimas;
+            }
+            else
+            {
+                q3 = datos[(int)(pos - 1)];
+            }
+        }
+        public void CalcularDatos(List<double> datos, double resta = 0)
         {
             var min = datos.Min();
             var max = datos.Max();
@@ -54,18 +97,18 @@ namespace Estadistica.Functions
             }
             for (int i = 0; i < k; i++)
             {
-                if (i == k - 1)
-                {
-                    seleccion = from dato in datos
-                                where dato >= Li[i] && dato <= Ls[i]
-                                select dato;
-                }
-                else
-                {
+                //if (i == k - 1)
+                //{
+                //    seleccion = from dato in datos
+                //                where dato >= Li[i] && dato <= Ls[i]
+                //                select dato;
+                //}
+                //else
+                //{
                     seleccion = from dato in datos
                                 where dato >= Li[i] && dato < Ls[i]
                                 select dato;
-                }
+                //}
                 f.Add(seleccion.Count());
                 xf.Add(x[i] * f[i]);
                 Fr.Add(f[i] / datos.Count);
@@ -85,6 +128,7 @@ namespace Estadistica.Functions
                 if (bandera && Fa[i] >= (datos.Count / 2))
                 {
                     medio = i;
+                    bandera = false;
                 }
             }
             media = xf.Sum() / datos.Count;
@@ -118,6 +162,10 @@ namespace Estadistica.Functions
             }
             varianza = xmediaCuadF.Sum() / (datos.Count - resta);
             desviacion = Math.Sqrt(varianza);
+        }
+        public void Limpiar()
+        {
+            current = new DatosConjunto();
         }
     }
 }

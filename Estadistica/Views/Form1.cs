@@ -18,6 +18,7 @@ namespace Estadistica
         ingresoDatos datos;
         GraphsView graficas;
         InfoTable tablas;
+        InfoVariable variables;
         public Form1()
         {
             InitializeComponent();
@@ -74,6 +75,14 @@ namespace Estadistica
             this.ContentPanel.Controls.Clear();
             this.ContentPanel.Controls.Add(tablas);
             tablas.Show();
+        }
+
+        private void btnVariables_Click(object sender, EventArgs e)
+        {
+            variables = new InfoVariable();
+            this.ContentPanel.Controls.Clear();
+            this.ContentPanel.Controls.Add(variables);
+            variables.Show();
         }
     }
 }

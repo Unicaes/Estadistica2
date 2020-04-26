@@ -139,24 +139,28 @@
             // ingresoColumna
             // 
             this.ingresoColumna.AutoSize = true;
-            this.ingresoColumna.Location = new System.Drawing.Point(312, 47);
+            this.ingresoColumna.Enabled = false;
+            this.ingresoColumna.Location = new System.Drawing.Point(524, 44);
             this.ingresoColumna.Name = "ingresoColumna";
             this.ingresoColumna.Size = new System.Drawing.Size(112, 29);
             this.ingresoColumna.TabIndex = 7;
             this.ingresoColumna.Text = "Columna";
             this.ingresoColumna.UseVisualStyleBackColor = true;
+            this.ingresoColumna.Visible = false;
             // 
             // ingresoFila
             // 
             this.ingresoFila.AutoSize = true;
             this.ingresoFila.Checked = true;
-            this.ingresoFila.Location = new System.Drawing.Point(242, 47);
+            this.ingresoFila.Enabled = false;
+            this.ingresoFila.Location = new System.Drawing.Point(454, 44);
             this.ingresoFila.Name = "ingresoFila";
             this.ingresoFila.Size = new System.Drawing.Size(64, 29);
             this.ingresoFila.TabIndex = 6;
             this.ingresoFila.TabStop = true;
             this.ingresoFila.Text = "Fila";
             this.ingresoFila.UseVisualStyleBackColor = true;
+            this.ingresoFila.Visible = false;
             // 
             // bunifuFlatButton1
             // 
@@ -178,14 +182,14 @@
             this.bunifuFlatButton1.IconVisible = true;
             this.bunifuFlatButton1.IconZoom = 90D;
             this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(436, 22);
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(231, 20);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Empty;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(212, 70);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(191, 70);
             this.bunifuFlatButton1.TabIndex = 5;
             this.bunifuFlatButton1.Text = "Ingresar";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

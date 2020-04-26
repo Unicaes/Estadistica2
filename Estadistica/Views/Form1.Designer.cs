@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.TopMenu = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
@@ -186,7 +186,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.AnimacionSidebar.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.ASidebarBack.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox1.Image = global::Estadistica.Properties.Resources.Menu_48px;
+            this.pictureBox1.Image = global::Estadistica.Properties.Resources.app4;
             this.pictureBox1.Location = new System.Drawing.Point(17, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
@@ -222,7 +222,7 @@
             this.btnGraficos.DisabledColor = System.Drawing.Color.Gray;
             this.btnGraficos.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGraficos.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnGraficos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnGraficos.Iconimage")));
+            this.btnGraficos.Iconimage = global::Estadistica.Properties.Resources.graficos;
             this.btnGraficos.Iconimage_right = null;
             this.btnGraficos.Iconimage_right_Selected = null;
             this.btnGraficos.Iconimage_Selected = null;
@@ -231,7 +231,7 @@
             this.btnGraficos.IconRightVisible = true;
             this.btnGraficos.IconRightZoom = 0D;
             this.btnGraficos.IconVisible = true;
-            this.btnGraficos.IconZoom = 100D;
+            this.btnGraficos.IconZoom = 50D;
             this.btnGraficos.IsTab = false;
             this.btnGraficos.Location = new System.Drawing.Point(2, 309);
             this.btnGraficos.Margin = new System.Windows.Forms.Padding(4);
@@ -261,7 +261,7 @@
             this.btnTabla.DisabledColor = System.Drawing.Color.Gray;
             this.btnTabla.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTabla.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTabla.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTabla.Iconimage")));
+            this.btnTabla.Iconimage = global::Estadistica.Properties.Resources.tabla;
             this.btnTabla.Iconimage_right = null;
             this.btnTabla.Iconimage_right_Selected = null;
             this.btnTabla.Iconimage_Selected = null;
@@ -270,7 +270,7 @@
             this.btnTabla.IconRightVisible = true;
             this.btnTabla.IconRightZoom = 0D;
             this.btnTabla.IconVisible = true;
-            this.btnTabla.IconZoom = 100D;
+            this.btnTabla.IconZoom = 50D;
             this.btnTabla.IsTab = false;
             this.btnTabla.Location = new System.Drawing.Point(2, 242);
             this.btnTabla.Margin = new System.Windows.Forms.Padding(4);
@@ -300,7 +300,7 @@
             this.btnVariables.DisabledColor = System.Drawing.Color.Gray;
             this.btnVariables.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVariables.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnVariables.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnVariables.Iconimage")));
+            this.btnVariables.Iconimage = global::Estadistica.Properties.Resources.variable;
             this.btnVariables.Iconimage_right = null;
             this.btnVariables.Iconimage_right_Selected = null;
             this.btnVariables.Iconimage_Selected = null;
@@ -309,7 +309,7 @@
             this.btnVariables.IconRightVisible = true;
             this.btnVariables.IconRightZoom = 0D;
             this.btnVariables.IconVisible = true;
-            this.btnVariables.IconZoom = 100D;
+            this.btnVariables.IconZoom = 50D;
             this.btnVariables.IsTab = false;
             this.btnVariables.Location = new System.Drawing.Point(2, 175);
             this.btnVariables.Margin = new System.Windows.Forms.Padding(4);
@@ -324,6 +324,7 @@
             this.btnVariables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnVariables.Textcolor = System.Drawing.Color.White;
             this.btnVariables.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVariables.Click += new System.EventHandler(this.btnVariables_Click);
             // 
             // btnDatos
             // 
@@ -338,7 +339,7 @@
             this.btnDatos.DisabledColor = System.Drawing.Color.Gray;
             this.btnDatos.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatos.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnDatos.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnDatos.Iconimage")));
+            this.btnDatos.Iconimage = global::Estadistica.Properties.Resources.datos;
             this.btnDatos.Iconimage_right = null;
             this.btnDatos.Iconimage_right_Selected = null;
             this.btnDatos.Iconimage_Selected = null;
@@ -347,7 +348,7 @@
             this.btnDatos.IconRightVisible = true;
             this.btnDatos.IconRightZoom = 0D;
             this.btnDatos.IconVisible = true;
-            this.btnDatos.IconZoom = 100D;
+            this.btnDatos.IconZoom = 50D;
             this.btnDatos.IsTab = false;
             this.btnDatos.Location = new System.Drawing.Point(2, 108);
             this.btnDatos.Margin = new System.Windows.Forms.Padding(4);
@@ -398,43 +399,43 @@
             // 
             this.AnimacionSidebar.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.AnimacionSidebar.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 1;
-            animation3.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 2F;
-            animation3.TransparencyCoeff = 0F;
-            this.AnimacionSidebar.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.AnimacionSidebar.DefaultAnimation = animation1;
             // 
             // ASidebarBack
             // 
             this.ASidebarBack.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
             this.ASidebarBack.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.ASidebarBack.DefaultAnimation = animation4;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.ASidebarBack.DefaultAnimation = animation2;
             // 
             // DashboardMover
             // 
@@ -458,6 +459,7 @@
             this.ASidebarBack.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.AnimacionSidebar.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

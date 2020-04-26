@@ -7,12 +7,24 @@ using System.Threading.Tasks;
 
 namespace Estadistica.Functions
 {
-    public static class DatosSimples
+    public class DatosSimples
     {
-        private static double mediana, moda, media,varianza,desviacion;
-        public static List<double> datosCuad = new List<double>();
-        public static Dictionary<double, int> conteo = new Dictionary<double, int>();
-        public static void CalcularMediana(List<Double> datos)
+        private static DatosSimples current;
+        public static DatosSimples Instance
+        {
+            get
+            {
+                if (current == null)
+                {
+                    current = new DatosSimples();
+                }
+                return current;
+            }
+        }
+        public double mediana, moda, media, varianza, desviacion,q1,q3;
+        public List<double> datosCuad = new List<double>();
+        public Dictionary<double, int> conteo = new Dictionary<double, int>();
+        public void CalcularMediana(List<Double> datos)
         {
             datos.Sort();
             if (datos.Count % 2 == 0)
@@ -30,9 +42,9 @@ namespace Estadistica.Functions
                 mediana = datos[PuntoMedio];
             }
         }
-        public static void CalcularModa(List<double> datos)
+        public void CalcularModa(List<double> datos)
         {
-            
+
             for (int i = 0; i < datos.Count; i++)
             {
                 if (conteo.ContainsKey(datos[i]))
@@ -54,7 +66,7 @@ namespace Estadistica.Functions
                 }
             }
         }
-        public static void CalcularMedia(List<double> datos)
+        public void CalcularMedia(List<double> datos)
         {
             double suma = 0;
             for (int i = 0; i < datos.Count; i++)
@@ -63,7 +75,7 @@ namespace Estadistica.Functions
             }
             media = suma / datos.Count;
         }
-        public static void CalcularVarianza(List<double> datos)
+        public void CalcularVarianza(List<double> datos)
         {
             int resta;
             if (Configuracion.muestra)
@@ -76,19 +88,54 @@ namespace Estadistica.Functions
             }
             foreach (var item in datos)
             {
-                var x = Math.Pow((item - media),2);
+                var x = Math.Pow((item - media), 2);
                 datosCuad.Add(x);
             }
             varianza = datosCuad.Sum();
-            varianza = varianza / (datos.Count-resta);
+            varianza = varianza / (datos.Count - resta);
             desviacion = Math.Sqrt(varianza);
         }
-        public static void CalcularDatos(List<double> datos)
+        public void CalcularDatos(List<double> datos)
         {
             CalcularMediana(datos);
             CalcularMedia(datos);
             CalcularModa(datos);
             CalcularVarianza(datos);
+            CalcularCuartiles(datos);
+        }
+        public void CalcularCuartiles(List<double> datos)
+        {
+            datos.Sort();
+            double pos = 0.25 * (datos.Count + 1);
+            double pos2 = 0.75 * (datos.Count + 1);
+            if (pos % 1 != 0)
+            {
+                var entero = (int)Math.Floor(pos);
+                var decimala = 1 - (Math.Ceiling(pos) - pos);
+                var valor = datos[entero - 1];
+                var decimas = decimala * (datos[entero] - datos[entero - 1]);
+                q1 = valor + decimas;
+            }
+            else
+            {
+                q1 = datos[(int)(pos - 1)];
+            }
+            if (pos2 % 1 != 0)
+            {
+                var entero = (int)Math.Floor(pos2);
+                var decimala = 1 - (Math.Ceiling(pos2) - pos2);
+                var valor = datos[entero - 1];
+                var decimas = decimala * (datos[entero] - datos[entero - 1]);
+                q3 = valor + decimas;
+            }
+            else
+            {
+                q3 = datos[(int)(pos - 1)];
+            }
+        }
+        public void Limpiar()
+        {
+            current = new DatosSimples();
         }
     }
 }

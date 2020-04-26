@@ -21,6 +21,7 @@ namespace Estadistica.Views
             TopLevel = false;
             //this.dataGridView1.BackgroundColor = Color.FromArgb(39, 41, 61);
             this.dataGridView1.Columns.Add(new DataGridViewTextBoxColumn());
+            this.dataGridView1.Rows.Add();
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -66,12 +67,19 @@ namespace Estadistica.Views
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
+            DatosConjunto.Instance.Limpiar();
+            DatosSimples.Instance.Limpiar();
+            Configuracion.agrupados = false;
+            Configuracion.muestra = false;
             List<double> datos = new List<double>();
             for (int i = 0; i < this.dataGridView1.Rows.Count; i++)
             {
                 for (int j = 0; j < this.dataGridView1.Columns.Count; j++)
                 {
-                    datos.Add(((double)this.dataGridView1.Rows[i].Cells[j].Value));
+                    if (this.dataGridView1.Rows[i].Cells[j].Value!=null)
+                    {
+                        datos.Add(((double)this.dataGridView1.Rows[i].Cells[j].Value));
+                    }
                 }
             }
             if (datosMuestra.Checked)
@@ -85,15 +93,16 @@ namespace Estadistica.Views
             if (siAgrupado.Checked)
             {
                 Configuracion.agrupados = true;
-                DatosConjunto.CalcularClases(datos.Count);
-                DatosConjunto.CalcularRango(datos.Max(), datos.Min());
-                DatosConjunto.CalcularAncho();
-                DatosConjunto.CalcularDatos(datos);
+                DatosConjunto.Instance.CalcularClases(datos.Count);
+                DatosConjunto.Instance.CalcularRango(datos.Max(), datos.Min());
+                DatosConjunto.Instance.CalcularAncho();
+                DatosConjunto.Instance.CalcularDatos(datos);
+                DatosConjunto.Instance.CalcularCuartiles(datos);
             }
             else
             {
                 Configuracion.agrupados = false;
-                DatosSimples.CalcularDatos(datos);
+                DatosSimples.Instance.CalcularDatos(datos);
             }
         }
 

@@ -1,0 +1,16 @@
+C:\Users\bryan\source\repos\Estadistica\Estadistica\bin\Release\Estadistica.exe.config
+C:\Users\bryan\source\repos\Estadistica\Estadistica\bin\Release\Estadistica.exe
+C:\Users\bryan\source\repos\Estadistica\Estadistica\bin\Release\Estadistica.pdb
+C:\Users\bryan\source\repos\Estadistica\Estadistica\bin\Release\Bunifu_UI_v1.5.3.dll
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.csprojAssemblyReference.cache
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.Form1.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.Properties.Resources.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.Views.GraphsView.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.Views.InfoTable.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.Views.InfoVariable.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.Views.ingresoDatos.resources
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.csproj.GenerateResource.cache
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.csproj.CoreCompileInputs.cache
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.csproj.CopyComplete
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.exe
+C:\Users\bryan\source\repos\Estadistica\Estadistica\obj\Release\Estadistica.pdb

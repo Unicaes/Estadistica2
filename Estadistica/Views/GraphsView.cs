@@ -38,16 +38,16 @@ namespace Estadistica.Views
         }
         void CargarDatosSimples()
         {
-            foreach (KeyValuePair<double,int> item in DatosSimples.conteo)
+            foreach (KeyValuePair<double,int> item in DatosSimples.Instance.conteo)
             {
                 this.chart1.Series["ChartFrecuencia"].Points.AddXY(item.Key.ToString(), item.Value);
             }
         }
         void CargarDatosAgrupados()
         {
-            for (int i = 0; i < DatosConjunto.k; i++)
+            for (int i = 0; i < DatosConjunto.Instance.k; i++)
             {
-                this.chart1.Series["ChartFrecuencia"].Points.AddXY(DatosConjunto.Li[i]+"-"+DatosConjunto.Ls[i], DatosConjunto.f[i]);
+                this.chart1.Series["ChartFrecuencia"].Points.AddXY(DatosConjunto.Instance.Li[i]+"-"+DatosConjunto.Instance.Ls[i], DatosConjunto.Instance.f[i]);
             }
         }
     }
